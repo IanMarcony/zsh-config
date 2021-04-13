@@ -80,10 +80,13 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
+plugins=(
+  git
   vscode
   node
   react-native
+  docker
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -162,3 +165,6 @@ zinit light zsh-users/zsh-completions
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Yarn Global Packages Setup
+export PATH="$PATH:$(yarn global bin)"
